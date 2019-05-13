@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap 'echo exiting; sleep 25; echo exited;' SIGTERM
+
 psmgr=/tmp/nginx-buildpack-wait
 rm -f $psmgr
 mkfifo $psmgr
